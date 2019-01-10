@@ -42,10 +42,10 @@ ClientUdp::~ClientUdp()
 
 void ClientUdp::processPendingDatagrams(QString &string)
 {
-    QString datagram;
+    
     QByteArray datagramByts;
-    datagram = string;
-    datagramByts.append(datagram);
+   
+    datagramByts.append(string);
 
     udpSocketClient->writeDatagram(datagramByts, QHostAddress::LocalHost, 1200);
     resultReady(SEND);
